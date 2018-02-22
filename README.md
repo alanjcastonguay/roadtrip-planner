@@ -53,7 +53,17 @@ Roadtrips as a Service
 * Alan would not like to use the same roads during his trips to maximize the amount of sightseeing for the time given.
 
 ## Stories
-As a person planning a road trip, I must know where the gas stations are along the way, because I must not run out of gas.
-As a person planning a road trip, I must know where the resaurants are along the way because, I must eat.
-As a person planning a road trip, I must know where the washrooms are along the way because, I must use it.
-As a person planning a road trip, I must know where the hotels are along the way because, I must sleep.
+* As a person planning a road trip, I must know where the gas stations are along the way, because I must not run out of gas.
+* As a person planning a road trip, I must know where the resaurants are along the way because, I must eat.
+* As a person planning a road trip, I must know where the washrooms are along the way because, I must use it.
+* As a person planning a road trip, I must know where the hotels are along the way because, I must sleep.
+
+## High Fidelity Prototype
+1. Prompt the user for the following: Google API key, Origin location, Destination location, a distance constraint for stop.
+2. Use Google Direction API to get directions from origin to destination.
+3. Get the polyline and distance returned Google Direction API and divide the polyline by distance constraint specified by the user.
+4. Get the latitude and logitude of the point wihtin the polyline to search for gas stations.
+5. Select the gas station nearest to the path of the directions from step 2 and save it's location for later.
+6. Get directions from the gas station to the destination specified by the user.
+7. Repeat steps 3 to 6 until the remaining distance is less than the distance constraint specified by the user.
+8. Get a final google directions with all of the waypoints selected throughout this process.
