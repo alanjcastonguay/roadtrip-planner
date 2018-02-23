@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 
 import { MapContentComponent } from './map-content.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { MapContentComponent } from './map-content.component';
       apiKey: 'AIzaSyBzcEQj2HNdmDI2-sBYLONvTGsdd3pIGys'
     })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

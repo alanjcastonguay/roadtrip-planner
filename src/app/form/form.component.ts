@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from '../request';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { DataService } from '../data.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -9,23 +11,24 @@ import {MatCardModule} from '@angular/material/card';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+
+  constructor(private dataService:DataService) {}
+
   panelOpenState = false;
   model = new Request('', '', 15);
-
   submitted = false;
 
-  onSubmit() {
+  onSubmit(form: NgForm) {
     this.submitted = true;
+    this.dataService.searchOrigin = this.model.origin;
+    this.dataService.searchDestination = this.model.destination;
+    this.dataService.searchMaximumDistanceInKm = this.model.maximum_distance_km;
 
     // var directionsService = new google.maps.DirectionsService;
-
-
-
   }
 
-  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {        
     /*
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {

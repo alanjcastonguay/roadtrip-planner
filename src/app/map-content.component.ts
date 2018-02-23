@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {GoogleMapsAPIWrapper} from '@agm/core';
+import { DataService } from './data.service';
 
 declare var google: any;
 
@@ -10,9 +11,7 @@ declare var google: any;
 })
 export class MapContentComponent implements OnInit {
 
-  constructor(public mapApiWrapper: GoogleMapsAPIWrapper) {
-
-  }
+  constructor(public mapApiWrapper: GoogleMapsAPIWrapper, private dataService:DataService) {}
 
   ngOnInit() {
 
@@ -38,6 +37,11 @@ export class MapContentComponent implements OnInit {
 
     this.mapApiWrapper.getNativeMap()
       .then((map) => {
+
+        console.log('Form values:')
+        console.log(this.dataService.searchOrigin);
+        console.log(this.dataService.searchDestination);
+        console.log(this.dataService.searchMaximumDistanceInKm);
 
         // I have been manually updating core/services/google-maps-types.d.ts to include things they didn't include.
         console.log(map.getZoom());
