@@ -13,18 +13,20 @@ export class FormComponent implements OnInit {
 
   model = new Request('', '', 15);
 
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
   constructor() {}
 
   ngOnInit() {
-
+    /*
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         const pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-
-
         // map.setCenter(pos);
       }, function() {
         // handleLocationError(true, infoWindow, map.getCenter());
@@ -33,7 +35,9 @@ export class FormComponent implements OnInit {
       // Browser doesn't support Geolocation
       // handleLocationError(false, infoWindow, map.getCenter());
     }
+    */
   }
 
   get diagnostic() { return JSON.stringify(this.model); }
+
 }
