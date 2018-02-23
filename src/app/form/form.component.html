@@ -1,25 +1,32 @@
-<mat-card>
-  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Trip Information
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-  <mat-form-field class="example-full-width">
-      <input matInput placeholder="Google API Key" value="">
-  </mat-form-field>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
 
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Origin" name="search-origin" [(ngModel)]="model.origin">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Destination" name="search-destination" [(ngModel)]="model.destination">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Maximum distance (KM)" name="search-maximum-distance-km" [(ngModel)]="model.maximum_distance_km">
-  </mat-form-field>
-
-  <button mat-button type="submit">Search</button>
-
-    {{diagnostic}}
-  </form>
-</mat-card>
-
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Google API Key" value="">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Origin" name="search-origin" [(ngModel)]="model.origin">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Destination" name="search-destination" [(ngModel)]="model.destination">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Maximum distance (KM)" name="search-maximum-distance-km" [(ngModel)]="model.maximum_distance_km">
+      </mat-form-field>
+    
+      <button mat-button type="submit">Search</button>
+      
+      {{diagnostic}}
+      </form>
+  </mat-expansion-panel>
+</mat-accordion>

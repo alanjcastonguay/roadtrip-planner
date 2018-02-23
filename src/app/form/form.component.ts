@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
+  panelOpenState: boolean = false;
   model = new Request('', '', 15);
 
   submitted = false;
