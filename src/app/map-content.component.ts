@@ -14,6 +14,8 @@ export class MapContentComponent implements OnInit {
 
   }
 
+
+
   ngOnInit() {
 
     this.mapApiWrapper.getNativeMap()
@@ -35,6 +37,17 @@ export class MapContentComponent implements OnInit {
           radius: 10000
         });
 
+        // Hardcoded example of getting directions from remote API during load. Just logs the structure to console.
+        const directions = new google.maps.DirectionsService;
+
+        directions.route({
+          origin: position,
+          destination: 'Seattle, WA',
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          console.log('Got directions response:');
+          console.log(response);
+        });
 
       });
 
