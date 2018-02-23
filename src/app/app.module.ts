@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     MatInputModule,
     MatExpansionModule,
+    MatButtonModule,
     CommonModule,
     FormsModule,
     MatCardModule,
