@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Request } from '../request';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 
 @Component({
   selector: 'app-form',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  model = new Request('', '', 15);
+
+  constructor() {}
 
   ngOnInit() {
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+
+        // map.setCenter(pos);
+      }, function() {
+        // handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      // handleLocationError(false, infoWindow, map.getCenter());
+    }
   }
 
+  get diagnostic() { return JSON.stringify(this.model); }
 }
