@@ -7,14 +7,17 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+
+import { MapContentComponent } from './map-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    MapContentComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
+      libraries: ['drawing'],
       apiKey: 'AIzaSyBzcEQj2HNdmDI2-sBYLONvTGsdd3pIGys'
     })
   ],
