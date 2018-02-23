@@ -45,8 +45,7 @@ export class MapContentComponent implements OnInit {
       destination: end_location,
       travelMode: 'DRIVING'
     }, function(response, status) {
-      console.log('Got directions response:');
-      console.log(response);
+      console.log('Got directions response:', response, status);
 
       const start_marker = new google.maps.Marker({
         map: map,
@@ -122,6 +121,16 @@ export class MapContentComponent implements OnInit {
         icon: image,
         title: place.name,
         position: place.geometry.location
+      });
+
+      const infowindow = new google.maps.InfoWindow({
+        content: place.name + '<br><br>' + place.vicinity;
+      });
+
+      console.log('place', place);
+
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
       });
 
     }
