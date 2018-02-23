@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  lat = 45.521;
-  lng = -122.677;
+  lat = 42.9487956;
+  lng = -81.3887036;
 }

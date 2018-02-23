@@ -29,7 +29,7 @@ import { MapContentComponent } from './map-content.component';
     MatCardModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
-      libraries: ['drawing'],
+      libraries: ['drawing', 'places'],
       apiKey: 'AIzaSyBzcEQj2HNdmDI2-sBYLONvTGsdd3pIGys'
     })
   ],
